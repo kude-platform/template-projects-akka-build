@@ -64,8 +64,8 @@ public class SystemConfiguration {
 		return ConfigFactory.parseString("" +
 				"akka.remote.artery.canonical.hostname = \"" + this.host + "\"\n" +
 				"akka.remote.artery.canonical.port = " + this.port + "\n" +
-						//"akka.remote.artery.bind.hostname = \"" + getDefaultHost() + "\"\n" +
-						//"akka.remote.artery.bind.port = " + this.port + "\n" +
+				"akka.remote.artery.bind.hostname = \"" + getDefaultHost() + "\"\n" +
+				"akka.remote.artery.bind.port = " + this.port + "\n" +
 				"akka.cluster.roles = [" + this.role + "]\n" +
 				"akka.cluster.seed-nodes = [\"akka://" + this.actorSystemName + "@" + this.masterHost + ":" + this.masterPort + "\"]")
 				.withFallback(ConfigFactory.load("application"));
